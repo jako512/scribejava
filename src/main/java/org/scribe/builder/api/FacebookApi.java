@@ -1,7 +1,7 @@
 package org.scribe.builder.api;
 
 import org.scribe.model.*;
-
+import org.scribe.extractors.*;
 import org.scribe.utils.*;
 
 public class FacebookApi extends DefaultApi20
@@ -30,4 +30,11 @@ public class FacebookApi extends DefaultApi20
       return String.format(AUTHORIZE_URL, config.getApiKey(), OAuthEncoder.encode(config.getCallback()));
     }
   }
+
+  @Override
+  public AccessTokenExtractor getAccessTokenExtractor()
+  {
+    return new JsonTokenExtractor();
+  }
+
 }
