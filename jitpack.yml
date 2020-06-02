@@ -1,0 +1,2 @@
+install:
+   - mvn install -DskipTests -Dfindbugs.skip=true -Dpmd.skip=true -Dmaven.javadoc.skip=true
